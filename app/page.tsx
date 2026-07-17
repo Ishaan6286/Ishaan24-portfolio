@@ -109,7 +109,7 @@ export default function HomePage() {
               </MagneticButton>
               <MagneticButton>
                 <Button
-                  href="https://drive.google.com/file/d/1_DJPUJifa2gWqZSFYVM-HNqqcIV4V_pW/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1EPr9y5ilhoYcvSqu0on4A-zApErnsbMd/view?usp=drive_link"
                   variant="secondary"
                   size="lg"
                   external
