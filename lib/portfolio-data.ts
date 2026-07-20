@@ -290,7 +290,7 @@ export const projects: Project[] = [
     impact:
       "A 7-mode compliance engine that automates SOC 2 workflows with real-time WebSocket communication and intelligent document retrieval.",
     github: "https://github.com/Anaa1101/Pramanik",
-    live: "https://complianceai-gamma.vercel.app/",
+    live: "https://pramanik-ai-delta.vercel.app/",
     overview:
       "Pramanik AI is a multimodal SOC 2 Compliance RAG Assistant built during a 24-hour hackathon. It automates compliance workflows through advanced RAG, policy document creation, gap audits, and conversational compliance AI.",
     problem:
