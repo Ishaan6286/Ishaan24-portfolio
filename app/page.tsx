@@ -12,13 +12,14 @@ import { Timeline } from "@/components/ui/timeline";
 import { ProjectCard } from "@/components/ui/project-card";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
   siteConfig,
   rotatingTitles,
   metrics,
   journeyMilestones,
   projects,
-  experience,
+  experiences,
   currently,
   lookingFor,
 } from "@/lib/portfolio-data";
@@ -62,6 +63,23 @@ export default function HomePage() {
               </span>
             </motion.div>
 
+            {/* Profile Image */}
+            <motion.div
+              className="mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="relative h-20 w-20 overflow-hidden rounded-full border border-white/[0.08] shadow-lg">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Ishaan Singh Chawla"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </motion.div>
+
             {/* Name */}
             <motion.h1
               className="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl md:text-6xl lg:text-7xl"
@@ -91,7 +109,7 @@ export default function HomePage() {
             >
               I build scalable backend systems, AI-powered pipelines, and
               production-ready applications. Currently interning at{" "}
-              <span className="text-zinc-400 font-medium">Hewlett Packard Enterprise</span>.
+              <span className="text-zinc-400 font-medium">SOYL AI</span>.
             </motion.p>
 
             {/* CTA buttons */}
@@ -203,12 +221,11 @@ export default function HomePage() {
                     experience, and writing software that stands up to real-world load.
                   </p>
                   <p>
-                    Currently building an AI-assisted data quality and observability
-                    platform at{" "}
+                    Currently building AI-powered concierge pipelines and RAG assistants at{" "}
                     <span className="text-zinc-200 font-medium">
-                      Hewlett Packard Enterprise
+                      SOYL AI
                     </span>{" "}
-                    as part of a 5-member engineering team.
+                    as an AI Engineering Intern.
                   </p>
                 </div>
               </Reveal>
@@ -285,38 +302,42 @@ export default function HomePage() {
       <section className="section-spacing" aria-labelledby="experience-heading">
         <div className="page-container">
           <SectionHeader
-            eyebrow="Where I&apos;ve Worked"
-            title={experience.company}
+            eyebrow="Where I've Worked"
+            title="Professional Experience"
           />
-          <Reveal>
-            <div className="rounded-2xl border border-white/[0.06] bg-[#111113] p-6 md:p-8">
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-5">
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <Briefcase size={15} className="text-zinc-500" />
-                    <h3 className="text-base font-semibold text-zinc-100">
-                      {experience.role}
-                    </h3>
+          <div className="space-y-6">
+            {experiences.map((exp, index) => (
+              <Reveal key={exp.company} delay={index * 0.1}>
+                <div className="rounded-2xl border border-white/[0.06] bg-[#111113] p-6 md:p-8">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-5">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <Briefcase size={15} className="text-zinc-500" />
+                        <h3 className="text-base font-semibold text-zinc-100">
+                          {exp.role} <span className="text-zinc-500 font-normal">at {exp.companyShort}</span>
+                        </h3>
+                      </div>
+                      <p className="text-sm text-zinc-500">
+                        {exp.period} · {exp.location}
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 mt-1 sm:mt-0">
+                      {exp.technologies.slice(0, 4).map((tech) => (
+                        <span key={tech} className="tech-tag text-[11px]">{tech}</span>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-sm text-zinc-500">
-                    {experience.period} · {experience.location}
+                  <p className="section-prose text-sm mb-5">
+                    {exp.overview}
                   </p>
+                  <Button href="/experience" variant="ghost" size="sm">
+                    Read Engineering Case Study
+                    <ArrowRight size={14} />
+                  </Button>
                 </div>
-                <div className="flex flex-wrap gap-1.5 mt-1 sm:mt-0">
-                  {experience.technologies.slice(0, 4).map((tech) => (
-                    <span key={tech} className="tech-tag text-[11px]">{tech}</span>
-                  ))}
-                </div>
-              </div>
-              <p className="section-prose text-sm mb-5">
-                {experience.overview}
-              </p>
-              <Button href="/experience" variant="ghost" size="sm">
-                Read Engineering Case Study
-                <ArrowRight size={14} />
-              </Button>
-            </div>
-          </Reveal>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

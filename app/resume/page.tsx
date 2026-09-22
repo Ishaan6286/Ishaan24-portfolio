@@ -4,7 +4,7 @@ import { Download, FileText } from "lucide-react";
 import { Reveal } from "@/components/animations/reveal";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
-import { skills, education, experience, achievements, projects } from "@/lib/portfolio-data";
+import { skills, education, experiences, achievements, projects } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
 import { SkillMap } from "@/components/ui/skill-map";
 import Link from "next/link";
@@ -22,7 +22,7 @@ export default function ResumePage() {
           />
           <Reveal delay={0.1}>
             <Button
-              href="https://drive.google.com/file/d/1EPr9y5ilhoYcvSqu0on4A-zApErnsbMd/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1omQkxatvKXRQLXtL9wVX3hca6oMMA119/view?usp=drive_link"
               variant="primary"
               size="md"
               external
@@ -53,28 +53,30 @@ export default function ResumePage() {
               </Reveal>
               
               <div className="space-y-12">
-                <Reveal delay={0.1}>
-                  <div className="relative pl-6 border-l border-white/[0.06]">
-                    <div className="absolute w-3 h-3 bg-zinc-600 rounded-full -left-[1.5px] top-1.5 ring-4 ring-[#09090b]" />
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
-                      <h3 className="text-lg font-semibold text-zinc-200">
-                        {experience.role}
-                      </h3>
-                      <span className="text-sm font-medium text-zinc-500 bg-white/[0.03] px-2.5 py-1 rounded-md w-fit">
-                        {experience.period}
-                      </span>
+                {experiences.map((exp, index) => (
+                  <Reveal key={exp.company} delay={0.1 + index * 0.1}>
+                    <div className="relative pl-6 border-l border-white/[0.06]">
+                      <div className="absolute w-3 h-3 bg-zinc-600 rounded-full -left-[1.5px] top-1.5 ring-4 ring-[#09090b]" />
+                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+                        <h3 className="text-lg font-semibold text-zinc-200">
+                          {exp.role}
+                        </h3>
+                        <span className="text-sm font-medium text-zinc-500 bg-white/[0.03] px-2.5 py-1 rounded-md w-fit">
+                          {exp.period}
+                        </span>
+                      </div>
+                      <p className="text-zinc-400 font-medium mb-4">{exp.company}</p>
+                      <ul className="space-y-2">
+                        {exp.responsibilities.map((item, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-zinc-400 leading-relaxed">
+                            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-zinc-500" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <p className="text-zinc-400 font-medium mb-4">{experience.company}</p>
-                    <ul className="space-y-2">
-                      {experience.responsibilities.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-zinc-400 leading-relaxed">
-                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-zinc-500" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Reveal>
+                  </Reveal>
+                ))}
               </div>
             </section>
 

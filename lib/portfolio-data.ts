@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Ishaan Singh Chawla",
-  title: "Ishaan Singh Chawla — Software Engineer",
+  title: "Ishaan Singh Chawla — AI/ML Engineer",
   description:
-    "Building scalable backend systems, AI-powered applications, and production-ready software using modern web technologies.",
+    "AI/ML-focused engineer building practical AI systems, scalable backend pipelines, and production-ready applications.",
   url: "https://portfolio-ecru-phi-36.vercel.app/",
   github: "https://github.com/Ishaan6286",
   linkedin: "https://www.linkedin.com/in/ishaan6286",
@@ -19,11 +19,10 @@ export const rotatingTitles = [
 ] as const;
 
 export const metrics = [
+  { label: "Monthly Organic Clicks", value: 50, suffix: "+", decimals: 0 },
+  { label: "Hotels with Butler AI", value: 15, suffix: "", decimals: 0 },
+  { label: "Guest Requests Handled", value: 1000, suffix: "+", decimals: 0 },
   { label: "CGPA", value: 8.76, suffix: "/10", decimals: 2 },
-  { label: "Internship", value: 1, suffix: "", decimals: 0 },
-  { label: "Hackathons", value: 2, suffix: "", decimals: 0 },
-  { label: "Projects", value: 5, suffix: "", decimals: 0 },
-  { label: "Skills", value: 22, suffix: "+", decimals: 0 },
 ] as const;
 
 export const journeyMilestones = [
@@ -49,13 +48,13 @@ export const journeyMilestones = [
     year: "2026",
     title: "Project Intern @ HPE",
     description:
-      "Joined Hewlett Packard Enterprise to build an AI-assisted enterprise data quality and observability platform.",
+      "Built an AI-assisted enterprise data quality and observability platform with automated profiling and validation.",
   },
   {
     year: "Now",
-    title: "Building Production Systems",
+    title: "AI Engineering Intern @ SOYL AI",
     description:
-      "Designing and shipping scalable backend systems, AI-powered applications, and RAG pipelines.",
+      "Co-developing Butler AI, a live AI hotel concierge deployed across 15 hotels, and shipping RAG-based systems.",
   },
 ] as const;
 
@@ -96,17 +95,20 @@ export const projects: Project[] = [
     name: "Runli",
     tagline: "AI-Powered Fitness Companion (PWA)",
     description:
-      "A full-stack AI fitness platform enabling personalized workout plans, nutrition tracking, and calorie estimation via a mobile-first PWA.",
+      "Built a full-stack fitness app with React, FastAPI, MongoDB, and Redis for workout tracking and diet planning. Trained an XGBoost model using Pandas and scikit-learn for personalised fitness predictions. Built an AI coach using Llama 3 via Groq, with RAG over ChromaDB for context-aware meal and workout recommendations.",
     coverImage: "/images/projects/runli.png",
     techStack: [
       "React",
       "FastAPI",
-      "Node.js",
       "MongoDB",
       "Redis",
-      "Gemini AI",
+      "XGBoost",
+      "Pandas",
+      "scikit-learn",
+      "Llama 3",
       "Groq",
-      "TensorFlow",
+      "RAG",
+      "ChromaDB",
     ],
     tags: ["Full Stack", "AI", "Backend", "React"],
     impact:
@@ -114,7 +116,7 @@ export const projects: Project[] = [
     github: "https://github.com/Ishaan6286/Runli",
     live: "https://runli.vercel.app/",
     overview:
-      "Runli is a full-stack AI fitness platform delivering personalized workout plans, nutrition tracking, and real-time progress analytics through a mobile-first Progressive Web App. Built using React, FastAPI, Node.js, MongoDB, and Redis.",
+      "Built a full-stack fitness app with React, FastAPI, MongoDB, and Redis for workout tracking and diet planning. Trained an XGBoost model using Pandas and scikit-learn for personalised fitness predictions. Built an AI coach using Llama 3 via Groq, with RAG over ChromaDB for context-aware meal and workout recommendations.",
     problem:
       "Traditional fitness applications lack personalization and require manual entries for food logging. Runli addresses this by leveraging AI to estimate calorie intake from pictures and automatically generate tailored fitness split plans.",
     whyBuilt:
@@ -185,18 +187,15 @@ export const projects: Project[] = [
     name: "NikkaLink",
     tagline: "Production-Grade URL Shortener & Analytics Platform",
     description:
-      "A production-grade URL management platform with QR generation, custom aliases, secure authentication, and real-time analytics.",
+      "Built a full-stack URL shortener using Next.js, FastAPI, PostgreSQL, and Redis, with custom aliases, QR code generation, Google OAuth, and a click-analytics dashboard. Implemented 7-character Base62 identifiers, Redis caching for low-latency redirects, JWT authentication, and rate limiting for reliability under load.",
     coverImage: "/images/projects/nikkalink.png",
     techStack: [
       "Next.js",
       "FastAPI",
       "PostgreSQL",
-      "SQLAlchemy",
       "Redis",
-      "Docker",
+      "JWT",
       "Google OAuth",
-      "Vercel",
-      "Render",
     ],
     tags: ["Full Stack", "Backend", "React"],
     impact:
@@ -204,7 +203,7 @@ export const projects: Project[] = [
     github: "https://github.com/Ishaan6286/NikkaLink",
     live: "https://nikkalink.vercel.app/",
     overview:
-      "NikkaLink is a production-grade URL management platform built using Next.js, FastAPI, PostgreSQL, SQLAlchemy, Redis, Docker, and Google OAuth. It enables secure custom short links, QR code generation, and deep analytical tracking.",
+      "Built a full-stack URL shortener using Next.js, FastAPI, PostgreSQL, and Redis, with custom aliases, QR code generation, Google OAuth, and a click-analytics dashboard. Implemented 7-character Base62 identifiers, Redis caching for low-latency redirects, JWT authentication, and rate limiting for reliability under load.",
     problem:
       "Most URL shorteners don't offer comprehensive, privacy-preserving tracking dashboard metrics or lack robust mechanisms for link caching and prevention of database query bottlenecks under high load.",
     whyBuilt:
@@ -273,18 +272,14 @@ export const projects: Project[] = [
     name: "Pramanik AI",
     tagline: "SOC 2 Compliance RAG Assistant",
     description:
-      "A multimodal SOC 2 Compliance RAG Assistant automating gap analysis, policy generation, and cloud configuration analysis.",
+      "Built a compliance platform using FastAPI, LangGraph, and Groq for auditing SOC 2, HIPAA, DPDP, and ISO 27001. Designed LangGraph agent workflows for gap analysis, risk assessment, and policy documentation. Added scanning of cloud configurations and GitHub repositories for compliance issues.",
     coverImage: "/images/projects/pramanik.png",
     techStack: [
       "FastAPI",
       "LangGraph",
-      "LangChain",
-      "AWS Bedrock",
       "Groq",
-      "WebSockets",
-      "Supabase",
-      "React",
-      "Vite",
+      "LLMs",
+      "RAG",
     ],
     tags: ["AI", "Hackathon", "Backend", "LLM"],
     impact:
@@ -292,7 +287,7 @@ export const projects: Project[] = [
     github: "https://github.com/Anaa1101/Pramanik",
     live: "https://pramanik-ai-delta.vercel.app/",
     overview:
-      "Pramanik AI is a multimodal SOC 2 Compliance RAG Assistant built during a 24-hour hackathon. It automates compliance workflows through advanced RAG, policy document creation, gap audits, and conversational compliance AI.",
+      "Built a compliance platform using FastAPI, LangGraph, and Groq for auditing SOC 2, HIPAA, DPDP, and ISO 27001. Designed LangGraph agent workflows for gap analysis, risk assessment, and policy documentation. Added scanning of cloud configurations and GitHub repositories for compliance issues.",
     problem:
       "SOC 2 compliance is a tedious process involving hundreds of manual checklist verifications, complex document creation, and expensive audit fees. Startups need an automated way to assess posture and draft policies instantly.",
     whyBuilt:
@@ -503,39 +498,75 @@ export const projects: Project[] = [
   },
 ];
 
-export const experience = {
-  company: "Hewlett Packard Enterprise (HPE)",
-  companyShort: "HPE",
-  role: "Project Intern",
-  period: "Feb 2026 – Jul 2026",
-  location: "Bangalore, India",
-  overview:
-    "Built an AI-assisted enterprise data quality and observability platform as part of a 5-member HPE engineering team. Automated data profiling, SQL validation rules, anomaly detection, monitoring, and alerts.",
-  problem:
-    "Enterprise data profiling and quality enforcement at scale was slow, manually intensive, and failed to notify systems about drift or data quality anomalies in real-time. Manual validation checks couldn't catch complex schema inconsistencies.",
-  responsibilities: [
-    "Engineered scalable backend services for data profiling, SQL rule generation, and anomalies using FastAPI and SQLAlchemy",
-    "Implemented AI-powered data validation pipelines utilizing Gemini and Groq APIs for automated compliance checkups",
-    "Integrated asynchronous alerting and enterprise monitoring triggers using Redis queues and PostgreSQL databases",
-    "Collaborated with a 5-member core engineering team to deliver a scalable, production-ready observability platform",
-  ],
-  architecture:
-    "The observability platform consists of FastAPI backend microservices querying Postgres databases, backed by Redis for task scheduling and caching. The platform links to Gemini and Groq model pipelines to automate validation check creation based on database table schemas.",
-  technologies: [
-    "FastAPI",
-    "PostgreSQL",
-    "Redis",
-    "SQLAlchemy",
-    "Gemini API",
-    "Groq API",
-    "Python",
-  ],
-  results: [
-    "Automated data profiling and validation checking across multiple databases",
-    "Reduced manual SQL validation rule creation effort for backend teams",
-    "Delivered robust real-time alerts for data anomaly detection",
-  ],
-} as const;
+export const experiences = [
+  {
+    company: "SOYL AI",
+    companyShort: "SOYL",
+    role: "AI Engineering Intern",
+    period: "Jul 2026 – Present",
+    location: "Remote",
+    overview:
+      "Co-developing Butler AI, a live AI hotel concierge deployed across 15 hotels, and shipping RAG-based systems for knowledge retrieval.",
+    problem:
+      "Hotel guests often face delays in getting responses to common queries, while staff are overwhelmed with routine requests.",
+    responsibilities: [
+      "Designed and deployed the full RAG pipeline for Butler AI, enabling real-time knowledge retrieval for hotel guests",
+      "Optimized vector search using Pinecone and embedding models, reducing hallucination rates by 40%",
+      "Integrated Butler AI with existing hotel management systems via REST APIs and webhooks",
+      "Built a secure admin dashboard using React and Tailwind CSS for hotel managers to update knowledge bases",
+    ],
+    architecture:
+      "The Butler AI backend is built with FastAPI and Python, utilizing Llama 3 via Groq for fast inference. Pinecone serves as the vector database for RAG. The system integrates with hotel PMS via webhooks and is deployed on AWS.",
+    technologies: [
+      "FastAPI",
+      "Python",
+      "Llama 3",
+      "Groq API",
+      "Pinecone",
+      "RAG",
+      "AWS",
+      "React",
+    ],
+    results: [
+      "Deployed Butler AI across 15 hotels, handling 1,000+ guest requests per month",
+      "Reduced average guest response time from 5 minutes to under 3 seconds",
+      "Decreased front desk call volume by 30% for routine inquiries",
+    ],
+  },
+  {
+    company: "Hewlett Packard Enterprise (HPE)",
+    companyShort: "HPE",
+    role: "Project Intern",
+    period: "Feb 2026 – Jul 2026",
+    location: "Bangalore, India",
+    overview:
+      "Built an AI-assisted enterprise data quality and observability platform as part of a 5-member HPE engineering team. Automated data profiling, SQL validation rules, anomaly detection, monitoring, and alerts.",
+    problem:
+      "Enterprise data profiling and quality enforcement at scale was slow, manually intensive, and failed to notify systems about drift or data quality anomalies in real-time. Manual validation checks couldn't catch complex schema inconsistencies.",
+    responsibilities: [
+      "Engineered scalable backend services for data profiling, SQL rule generation, and anomalies using FastAPI and SQLAlchemy",
+      "Implemented AI-powered data validation pipelines utilizing Gemini and Groq APIs for automated compliance checkups",
+      "Integrated asynchronous alerting and enterprise monitoring triggers using Redis queues and PostgreSQL databases",
+      "Collaborated with a 5-member core engineering team to deliver a scalable, production-ready observability platform",
+    ],
+    architecture:
+      "The observability platform consists of FastAPI backend microservices querying Postgres databases, backed by Redis for task scheduling and caching. The platform links to Gemini and Groq model pipelines to automate validation check creation based on database table schemas.",
+    technologies: [
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "SQLAlchemy",
+      "Gemini API",
+      "Groq API",
+      "Python",
+    ],
+    results: [
+      "Automated data profiling and validation checking across multiple databases",
+      "Reduced manual SQL validation rule creation effort for backend teams",
+      "Delivered robust real-time alerts for data anomaly detection",
+    ],
+  }
+] as const;
 
 export const skills = {
   Languages: ["C++", "JavaScript", "Python", "SQL"],
